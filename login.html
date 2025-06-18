@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>Đăng nhập - The Bag Studio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        .auth-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .auth-left {
+            background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .auth-right {
+            padding: 60px 40px;
+        }
+        
+        .brand-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .brand-primary {
+            background-color: #ffffff;
+            color: #343a40;
+            padding: 8px 16px;
+            text-transform: uppercase;
+        }
+        
+        .brand-secondary {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 8px 16px;
+            margin-left: -4px;
+            text-transform: uppercase;
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            font-size: 14px;
+        }
+        
+        .form-control:focus {
+            border-color: #343a40;
+            box-shadow: 0 0 0 0.2rem rgba(52,58,64,.25);
+        }
+        
+        .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #212529;
+            border-color: #212529;
+        }
+        
+        .auth-links a {
+            color: #343a40;
+            text-decoration: none;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-login {
+            margin-top: 20px;
+        }
+        
+        .btn-social {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .btn-facebook {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+
+        .btn-facebook:hover {
+            background-color: #5a6268;
+            border-color: #5a6268;
+        }
+        
+        .btn-google {
+            background-color: #495057;
+            border-color: #495057;
+            color: white;
+        }
+
+        .btn-google:hover {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-left {
+                padding: 40px 20px;
+            }
+            
+            .auth-right {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-1 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center h-100">
+                    <a class="text-body mr-3" href="">Liên hệ</a>
+                    <a class="text-body mr-3" href="">Giúp đỡ</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="register.html">Đăng ký</a>
+                        </div>
+                    </div>
+                    <div class="btn-group mx-2">
+                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Ngôn ngữ</button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button class="dropdown-item" type="button">Tiếng việt</button>
+                            <button class="dropdown-item" type="button">Tiếng anh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center bg-light py-3 px-xl-5">
+            <div class="col-lg-4">
+                <a href="index.html" class="text-decoration-none">
+                    <span class="brand-primary">The Bag</span>
+                    <span class="brand-secondary">Studio</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-center">
+                <h4 class="m-0" style="color: #343a40;">Đăng nhập tài khoản</h4>
+            </div>
+            <div class="col-lg-4 col-6 text-right">
+                <p class="m-0">Chăm sóc khách hàng</p>
+                <h5 class="m-0">012 345 6789</h5>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Login Form Start -->
+    <div class="auth-container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="auth-card">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <div class="auth-left">
+                                    <div class="brand-logo">
+                                        <span class="brand-primary">The Bag</span>
+                                        <span class="brand-secondary">Studio</span>
+                                    </div>
+                                    <h3 class="mb-4">Chào mừng trở lại!</h3>
+                                    <p class="mb-4">Đăng nhập để truy cập vào tài khoản của bạn và khám phá bộ sưu tập túi xách cao cấp của chúng tôi.</p>
+                                    <div class="mt-4">
+                                        <i class="fas fa-shopping-bag fa-3x mb-3"></i>
+                                        <p>Mua sắm dễ dàng, giao hàng nhanh chóng</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="auth-right">
+                                    <h2 class="text-center mb-4">Đăng nhập</h2>
+                                    
+                                    <form id="loginForm">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                </div>
+                                                <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="password">Mật khẩu</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                </div>
+                                                <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="togglePassword" style="cursor: pointer;">
+                                                        <i class="fas fa-eye"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="remember">
+                                            <label class="form-check-label" for="remember">Ghi nhớ đăng nhập</label>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                    </form>
+                                    
+                                    <div class="text-center mt-3">
+                                        <a href="#" class="auth-links">Quên mật khẩu?</a>
+                                    </div>
+                                    
+                                    <hr class="my-4">
+                                    
+                                    <div class="social-login">
+                                        <button class="btn btn-facebook btn-social">
+                                            <i class="fab fa-facebook-f mr-2"></i>Đăng nhập với Facebook
+                                        </button>
+                                        <button class="btn btn-google btn-social">
+                                            <i class="fab fa-google mr-2"></i>Đăng nhập với Google
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="text-center mt-4 auth-links">
+                                        <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Form End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Liên lạc</h5>
+                <p class="mb-4">Hãy liên lạc với chúng tôi nếu bạn đang thất mất hoặc muốn chúng tôi tư vấn sản phẩm phù hợp với bạn thì cứ liên lạc với chúng tôi</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Ngô Quyền, P. Thường Thạnh, Q. Cái Răng, TP. Cần Thơ</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>nhomhyvongdatn@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>012 345 67890</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Cửa hàng nhanh</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cửa hàng của chúng tôi</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa hàng</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Tài khoản của tôi</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
+                            <a class="text-secondary mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Đăng nhập</a>
+                            <a class="text-secondary mb-2" href="register.html"><i class="fa fa-angle-right mr-2"></i>Đăng ký</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Bản tin</h5>
+                        <p>Hãy tìm hiểu về chúng tôi</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Địa chỉ email của bạn">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary">Đăng ký</button>
+                                </div>
+                            </div>
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Theo đổi chúng tôi</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (password.type === 'password') {
+                password.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                password.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Đăng nhập thành công! Chuyển hướng về trang chủ...');
+                // Redirect to homepage or dashboard
+                window.location.href = 'index.html';
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        });
+    </script>
+</body>
+
+</html>
