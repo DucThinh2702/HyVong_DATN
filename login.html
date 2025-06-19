@@ -38,25 +38,36 @@
         
         .auth-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 0;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             overflow: hidden;
-            max-width: 900px;
+            max-width: 1200px;
             width: 100%;
+            height: 100vh;
         }
-        
+
+        .auth-card .row {
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-left, .auth-right {
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .auth-left {
             background: linear-gradient(135deg, #343a40 0%, #212529 100%);
             color: white;
             padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
         }
-        
+
         .auth-right {
+            background: white;
             padding: 60px 40px;
         }
         
@@ -158,6 +169,24 @@
                 padding: 40px 20px;
             }
         }
+
+        .features-list {
+            text-align: left;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .feature-item i {
+            width: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -174,7 +203,7 @@
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
+                        <a href="#" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="login.html">Đăng nhập</a>
                             <a class="dropdown-item" href="register.html">Đăng ký</a>
@@ -224,9 +253,36 @@
                                     </div>
                                     <h3 class="mb-4">Chào mừng trở lại!</h3>
                                     <p class="mb-4">Đăng nhập để truy cập vào tài khoản của bạn và khám phá bộ sưu tập túi xách cao cấp của chúng tôi.</p>
-                                    <div class="mt-4">
+                                    
+                                    <div class="mt-4 mb-4">
                                         <i class="fas fa-shopping-bag fa-3x mb-3"></i>
-                                        <p>Mua sắm dễ dàng, giao hàng nhanh chóng</p>
+                                    </div>
+                                    
+                                    <div class="features-list">
+                                        <div class="feature-item mb-3">
+                                            <i class="fas fa-truck mr-2"></i>
+                                            <span>Mua sắm dễ dàng, giao hàng nhanh chóng</span>
+                                        </div>
+                                        <div class="feature-item mb-3">
+                                            <i class="fas fa-shield-alt mr-2"></i>
+                                            <span>Mua sắm an toàn, chất lượng đảm bảo</span>
+                                        </div>
+                                        <div class="feature-item mb-3">
+                                            <i class="fas fa-search mr-2"></i>
+                                            <span>Khám phá nhiều sản phẩm hấp dẫn</span>
+                                        </div>
+                                        <div class="feature-item mb-3">
+                                            <i class="fas fa-gift mr-2"></i>
+                                            <span>Ưu đãi đặc biệt dành cho bạn</span>
+                                        </div>
+                                        <div class="feature-item mb-3">
+                                            <i class="fas fa-shipping-fast mr-2"></i>
+                                            <span>Giao hàng miễn phí</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-tags mr-2"></i>
+                                            <span>Mua sắm không lo về giá cả</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
