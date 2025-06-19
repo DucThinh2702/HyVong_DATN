@@ -22,160 +22,183 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-        }
+<style>
+    /* Màu sắc chủ đạo mới */
+    .auth-left {
+    background: linear-gradient(135deg, #343a40, #212529);
+    color: white;
+}
 
-        .auth-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 0;
-        }
+.brand-primary {
+    background-color: #F1C40F;
+    color: #343a40;
+    padding: 6px 10px;
+    font-weight: bold;
+}
 
-        .auth-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            max-width: 1000px;
-            width: 100%;
-        }
+.brand-secondary {
+    background-color: #343a40;
+    color: white;
+    padding: 6px 10px;
+    margin-left: -4px;
+    font-weight: bold;
+}
 
-        .auth-left {
-            background: linear-gradient(135deg, #343a40 0%, #212529 100%);
-            color: white;
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+.btn-primary {
+    background-color: #F1C40F;
+    color: #343a40;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
 
-        .auth-right {
-            padding: 60px 40px;
-        }
+.btn-primary:hover {
+    background-color: #D4AC0D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
-        .brand-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+.btn-facebook {
+    background-color: #3b5998;
+    color: white;
+}
 
-        .brand-primary {
-            background-color: #ffffff;
-            color: #343a40;
-            padding: 8px 16px;
-            text-transform: uppercase;
-        }
+.btn-google {
+    background-color: #db4437;
+    color: white;
+}
 
-        .brand-secondary {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 8px 16px;
-            margin-left: -4px;
-            text-transform: uppercase;
-        }
+.form-control:focus {
+    border-color: #F1C40F;
+    box-shadow: 0 0 0 0.2rem rgba(241, 196, 15, 0.25);
+}
 
-        .form-control {
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            font-size: 14px;
-        }
+    :root {
+        --primary-color: #F1C40F;       /* Vàng chính */
+        --primary-dark: #D4AC0D;        /* Vàng đậm cho hover */
+        --dark-color: #343a40;          /* Xám đậm cho background */
+        --text-on-yellow: #343a40;      /* Chữ trên nền vàng */
+    }
 
-        .form-control:focus {
-            border-color: #343a40;
-            box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, .25);
-        }
+    /* Cập nhật các thành phần chính */
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--text-on-yellow);
+        font-weight: 600;
+    }
 
-        .btn-primary {
-            background-color: #343a40;
-            border-color: #343a40;
-            padding: 12px 30px;
-            font-weight: 500;
-            border-radius: 5px;
-        }
+    .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        color: var(--text-on-yellow);
+    }
 
-        .btn-primary:hover {
-            background-color: #212529;
-            border-color: #212529;
-        }
+    /* Phần auth-left (bên trái) */
+    .auth-left {
+        background: linear-gradient(135deg, var(--dark-color) 0%, #212529 100%);
+        color: white;
+    }
 
-        .auth-links a {
-            color: #343a40;
-            text-decoration: none;
-        }
+    /* Logo và brand */
+    .brand-primary {
+        background-color: var(--primary-color);
+        color: var(--text-on-yellow);
+        padding: 8px 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
 
-        .auth-links a:hover {
-            text-decoration: underline;
-        }
+    .brand-secondary {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 8px 16px;
+        margin-left: -4px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
 
-        .social-login {
-            margin-top: 20px;
-        }
+    /* Focus input */
+    .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(241, 196, 15, .25);
+    }
 
-        .btn-social {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: 500;
-        }
+    /* Header */
+    .bg-light {
+        background-color: white !important;
+        border-bottom: 1px solid #eee;
+    }
 
-        .btn-facebook {
-            background-color: #6c757d;
-            border-color: #6c757d;
-            color: white;
-        }
+    /* Footer */
+    .bg-dark {
+        background-color: var(--dark-color) !important;
+    }
 
-        .btn-facebook:hover {
-            background-color: #5a6268;
-            border-color: #5a6268;
-        }
+    /* Các nút social */
+    .btn-facebook {
+        background-color: #3b5998;
+        border-color: #3b5998;
+        color: white;
+    }
 
-        .btn-google {
-            background-color: #495057;
-            border-color: #495057;
-            color: white;
-        }
+    .btn-google {
+        background-color: #db4437;
+        border-color: #db4437;
+        color: white;
+    }
 
-        .btn-google:hover {
-            background-color: #343a40;
-            border-color: #343a40;
-        }
+    /* Password strength */
+    .strength-weak {
+        color: #e74c3c;
+    }
 
-        .password-strength {
-            margin-top: 5px;
-            font-size: 12px;
-        }
+    .strength-medium {
+        color: var(--primary-color);
+    }
 
-        .strength-weak {
-            color: #dc3545;
-        }
+    .strength-strong {
+        color: #2ecc71;
+    }
 
-        .strength-medium {
-            color: #ffc107;
-        }
+    /* Thêm hiệu ứng cho nút vàng */
+    .btn-primary {
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .strength-strong {
-            color: #28a745;
-        }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-        @media (max-width: 768px) {
-            .auth-left {
-                padding: 40px 20px;
-            }
+    /* Footer styling */
+    .footer-white-text {
+        color: white !important;
+    }
 
-            .auth-right {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+    .footer-white-text h5 {
+        color: white !important;
+    }
+
+    .footer-white-text p {
+        color: white !important;
+    }
+
+    .footer-white-text a {
+        color: white !important;
+    }
+
+    .footer-white-text a:hover {
+        color: var(--primary-color) !important;
+    }
+
+    /* Header top bar */
+    .bg-secondary {
+        background-color: #f8f9fa !important;
+    }
+</style>
 </head>
 
 <body>
@@ -229,281 +252,133 @@
     <!-- Header End -->
 
     <!-- Register Form Start -->
-    <div class="auth-container">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-11">
-                    <div class="auth-card">
-                        <div class="row no-gutters">
-                            <div class="col-md-5">
-                                <div class="auth-left">
-                                    <div class="brand-logo">
-                                        <span class="brand-primary">The Bag</span>
-                                        <span class="brand-secondary">Studio</span>
-                                    </div>
-                                    <h3 class="mb-4">Tham gia cùng chúng tôi!</h3>
-                                    <p class="mb-4">Tạo tài khoản để trải nghiệm mua sắm tuyệt vời với bộ sưu tập túi
-                                        xách cao cấp và nhận được những ưu đãi đặc biệt.</p>
-                                    <div class="mt-4">
-                                        <div class="row text-center">
-                                            <div class="col-4">
-                                                <i class="fas fa-truck fa-2x mb-2"></i>
-                                                <p><small>Miễn phí vận chuyển</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-certificate fa-2x mb-2"></i>
-                                                <p><small>Chất lượng đảm bảo</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-phone-volume fa-2x mb-2"></i>
-                                                <p><small>Hỗ trợ mọi lúc</small></p>
-                                            </div>
+   <div class="container mt-5">
+    <div class="row no-gutters shadow rounded overflow-hidden">
+        <!-- Bên trái -->
+        <div class="col-md-5 auth-left text-white p-4">
+            <div class="brand-logo mb-3">
+                <span class="brand-primary">The Bag</span>
+                <span class="brand-secondary">Studio</span>
+            </div>
+            <h4 class="mb-3 font-weight-bold">Tham gia cùng chúng tôi!</h4>
+            <p class="mb-4">Tận hưởng mua sắm tuyệt vời, chất lượng đảm bảo và nhiều ưu đãi.</p>
 
-                                            <div class="col-4">
-                                                <i class="fas fa-truck-loading fa-2x mb-2"></i>
-                                                <p><small>Giao hàng nhanh chóng</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-trophy fa-2x mb-2"></i>
-                                                <p><small>Chứng nhận uy tín</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-headphones-alt fa-2x mb-2"></i>
-                                                <p><small>Chăm sóc khách hàng 24/7</small></p>
-                                            </div>
-
-                                            <div class="col-4">
-                                                <i class="fas fa-truck-moving fa-2x mb-2"></i>
-                                                <p><small>Vận chuyển an toàn</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-headset fa-2x mb-2"></i>
-                                                <p><small>Hỗ trợ kỹ thuật 24/7</small></p>
-                                            </div>
-
-                                            <div class="col-4">
-                                                <i class="fas fa-truck fa-2x mb-2"></i>
-                                                <p><small>Giao hàng miễn phí</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-star fa-2x mb-2"></i>
-                                                <p><small>Chất lượng vượt trội</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-comments fa-2x mb-2"></i>
-                                                <p><small>Hỗ trợ nhanh chóng</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-smile-beam fa-2x mb-2"></i>
-                                                <p><small>Hài lòng 100%</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-shield-alt fa-2x mb-2"></i>
-                                                <p><small>Bảo mật tuyệt đối</small></p>
-                                            </div>
-
-                                            <div class="col-4">
-                                                <i class="fas fa-hands-helping fa-2x mb-2"></i>
-                                                <p><small>Hỗ trợ tận tình</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-star-half-alt fa-2x mb-2"></i>
-                                                <p><small>Đánh giá cao</small></p>
-                                            </div>
-
-                                            <div class="col-4">
-                                                <i class="fas fa-dolly fa-2x mb-2"></i>
-                                                <p><small>Vận chuyển tận nơi</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-heart fa-2x mb-2"></i>
-                                                <p><small>Yêu thích sản phẩm</small></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <i class="fas fa-comment-dollar fa-2x mb-2"></i>
-                                                <p><small>Giá cả hợp lý</small></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="auth-right">
-                                    <h2 class="text-center mb-4">Đăng ký tài khoản</h2>
-
-                                    <form id="registerForm">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="firstName">Họ</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-user"></i></span>
-                                                        </div>
-                                                        <input type="text" class="form-control" id="firstName"
-                                                            placeholder="Nhập họ" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Tên</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-user"></i></span>
-                                                        </div>
-                                                        <input type="text" class="form-control" id="lastName"
-                                                            placeholder="Nhập tên" required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-envelope"></i></span>
-                                                </div>
-                                                <input type="email" class="form-control" id="email"
-                                                    placeholder="Nhập email của bạn" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="phone">Số điện thoại</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                                                </div>
-                                                <input type="tel" class="form-control" id="phone"
-                                                    placeholder="Nhập số điện thoại" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="password">Mật khẩu</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-lock"></i></span>
-                                                        </div>
-                                                        <input type="password" class="form-control" id="password"
-                                                            placeholder="Nhập mật khẩu" required>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text" id="togglePassword"
-                                                                style="cursor: pointer;">
-                                                                <i class="fas fa-eye"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="password-strength" id="passwordStrength"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="confirmPassword">Xác nhận mật khẩu</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-lock"></i></span>
-                                                        </div>
-                                                        <input type="password" class="form-control" id="confirmPassword"
-                                                            placeholder="Nhập lại mật khẩu" required>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text" id="toggleConfirmPassword"
-                                                                style="cursor: pointer;">
-                                                                <i class="fas fa-eye"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="birthDate">Ngày sinh</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-calendar"></i></span>
-                                                </div>
-                                                <input type="date" class="form-control" id="birthDate">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Giới tính</label>
-                                            <div class="form-check form-check-inline ml-3">
-                                                <input class="form-check-input" type="radio" name="gender" id="male"
-                                                    value="male">
-                                                <label class="form-check-label" for="male">Nam</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="female"
-                                                    value="female">
-                                                <label class="form-check-label" for="female">Nữ</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender" id="other"
-                                                    value="other">
-                                                <label class="form-check-label" for="other">Khác</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" id="terms" required>
-                                            <label class="form-check-label" for="terms">
-                                                Tôi đồng ý với <a href="#" class="auth-links">Điều khoản sử dụng</a> và
-                                                <a href="#" class="auth-links">Chính sách bảo mật</a>
-                                            </label>
-                                        </div>
-
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" id="newsletter">
-                                            <label class="form-check-label" for="newsletter">
-                                                Đăng ký nhận bản tin và ưu đãi đặc biệt
-                                            </label>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary btn-block">Tạo tài khoản</button>
-                                    </form>
-
-                                    <hr class="my-4">
-
-                                    <div class="social-login">
-                                        <button class="btn btn-facebook btn-social">
-                                            <i class="fab fa-facebook-f mr-2"></i>Đăng ký với Facebook
-                                        </button>
-                                        <button class="btn btn-google btn-social">
-                                            <i class="fab fa-google mr-2"></i>Đăng ký với Google
-                                        </button>
-                                    </div>
-
-                                    <div class="text-center mt-4 auth-links">
-                                        <p>Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row text-center">
+                <div class="col-4 mb-4">
+                    <i class="fas fa-truck fa-2x mb-2"></i>
+                    <p><small>Miễn phí vận chuyển</small></p>
+                </div>
+                <div class="col-4 mb-4">
+                    <i class="fas fa-trophy fa-2x mb-2"></i>
+                    <p><small>Uy tín & chất lượng</small></p>
+                </div>
+                <div class="col-4 mb-4">
+                    <i class="fas fa-headset fa-2x mb-2"></i>
+                    <p><small>Hỗ trợ 24/7</small></p>
+                </div>
+                <div class="col-4 mb-4">
+                    <i class="fas fa-shield-alt fa-2x mb-2"></i>
+                    <p><small>Bảo mật tuyệt đối</small></p>
+                </div>
+                <div class="col-4 mb-4">
+                    <i class="fas fa-smile-beam fa-2x mb-2"></i>
+                    <p><small>Hài lòng 100%</small></p>
+                </div>
+                <div class="col-4 mb-4">
+                    <i class="fas fa-heart fa-2x mb-2"></i>
+                    <p><small>Giá cả hợp lý</small></p>
                 </div>
             </div>
         </div>
+
+        <!-- Bên phải -->
+        <div class="col-md-7 bg-white p-5">
+            <h3 class="text-center text-dark mb-4">Đăng ký tài khoản</h3>
+
+            <form id="registerForm">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="firstName">Họ</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Nhập họ" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="lastName">Tên</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Nhập tên" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="confirmPassword">Xác nhận mật khẩu</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Ngày sinh</label>
+                    <input type="date" class="form-control" id="birthDate">
+                </div>
+
+                <div class="form-group">
+                    <label>Giới tính</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Nam">
+                        <label class="form-check-label" for="male">Nam</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Nữ">
+                        <label class="form-check-label" for="female">Nữ</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="other" value="Khác">
+                        <label class="form-check-label" for="other">Khác</label>
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">
+                        Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Tạo tài khoản</button>
+
+                <div class="text-center mt-3">
+                    <p>Hoặc đăng ký bằng:</p>
+                    <button type="button" class="btn btn-facebook btn-block mb-2"><i class="fab fa-facebook-f mr-2"></i>Đăng ký với Facebook</button>
+                    <button type="button" class="btn btn-google btn-block"><i class="fab fa-google mr-2"></i>Đăng ký với Google</button>
+                </div>
+
+                <div class="text-center mt-3">
+                    <p>Đã có tài khoản? <a href="login.html"><strong>Đăng nhập ngay</strong></a></p>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
     <!-- Register Form End -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+    <div class="container-fluid bg-dark footer-white-text mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">Liên lạc</h5>
+                <h5 class="footer-white-text text-uppercase mb-4">Liên lạc</h5>
                 <p class="mb-4">Hãy liên lạc với chúng tôi nếu bạn đang thất mất hoặc muốn chúng tôi tư vấn sản phẩm phù
                     hợp với bạn thì cứ liên lạc với chúng tôi</p>
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Ngô Quyền, P. Thường Thạnh, Q.
@@ -514,33 +389,33 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Cửa hàng nhanh</h5>
+                        <h5 class="footer-white-text text-uppercase mb-4">Cửa hàng nhanh</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang
+                            <a class="footer-white-text mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang
                                 chủ</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cửa hàng của
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cửa hàng của
                                 chúng tôi</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa
                                 hàng</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Tài khoản của tôi</h5>
+                        <h5 class="footer-white-text text-uppercase mb-4">Tài khoản của tôi</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang
+                            <a class="footer-white-text mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang
                                 chủ</a>
-                            <a class="text-secondary mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Đăng
+                            <a class="footer-white-text mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Đăng
                                 nhập</a>
-                            <a class="text-secondary mb-2" href="register.html"><i
+                            <a class="footer-white-text mb-2" href="register.html"><i
                                     class="fa fa-angle-right mr-2"></i>Đăng ký</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                            <a class="footer-white-text mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Bản tin</h5>
+                        <h5 class="footer-white-text text-uppercase mb-4">Bản tin</h5>
                         <p>Hãy tìm hiểu về chúng tôi</p>
                         <form action="">
                             <div class="input-group">
@@ -550,7 +425,7 @@
                                 </div>
                             </div>
                         </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Theo đổi chúng tôi</h6>
+                        <h6 class="footer-white-text text-uppercase mt-4 mb-3">Theo đổi chúng tôi</h6>
                         <div class="d-flex">
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
